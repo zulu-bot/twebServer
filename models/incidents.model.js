@@ -13,7 +13,7 @@ var incidentsSchema = new mongoose.Schema({
     idInvestigador: {
         type: String
     },
-    Descripcion: {
+    descripcion: {
         type: String
    },
    fechaInicio: {

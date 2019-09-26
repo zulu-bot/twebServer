@@ -10,7 +10,7 @@ module.exports.register = (req, res, next) =>{
     incidents.nivelImpacto = req.body.nivelImpacto;
     incidents.idEmpleado = req.body.idEmpleado;
     incidents.idInvestigador = req.body.idInvestigador;
-    incidents.Descripcion = req.body.Descripcion;
+    incidents.descripcion = req.body.descripcion;
     incidents.fechaInicio = req.body.fechaInicio;
     incidents.fechaFinal = req.body.fechaFinal;
     incidents.estado = req.body.estado;
