@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-var incidents = new mongoose.Schema({
+var incidentsSchema = new mongoose.Schema({
     idIncidente:{
         type: String
     },
@@ -27,5 +27,9 @@ var incidents = new mongoose.Schema({
         type: String
    }
 });
+
+mongoose.model('Incidents', incidentsSchema);
+
+
 
 
