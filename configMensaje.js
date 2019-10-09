@@ -12,7 +12,8 @@ module.exports = (formulario) => {
 let mailOptions = {
     from: `"${formulario.nombre} " <${formulario.email}>`,
     to: formulario.email,
-    subjetct: formulario.asunto,
+    subject: formulario.asunto,
+
 
     html: `
     ${formulario.mensaje}
