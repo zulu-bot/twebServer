@@ -1,31 +1,38 @@
-NODE_TLS_REJECT_UNAUTHORIZED = 0
+process.env.NODE_TLS_REJECT_UNAUTHORIZED="0";
 const nodemailer = require('nodemailer');
 module.exports = (formulario) => {
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'daniel.obando2486@gmail.com',
-            pass: 'fortnite2486..'
+            user: 'fwrsm.sa@gmail.com',
+            pass: 'frankisall'
         }
     });
 
-const mailOptions = {
+let mailOptions = {
     from: `"${formulario.nombre} " <${formulario.email}>`,
-    to: 'xander.david09@gmail.com',
+    to: formulario.email,
     subject: formulario.asunto,
-    htlm: `
-    <strong>Nombre:</strong>${formulario.nombre} <br/>
-    <strong>E-mail:</strong>${formulario.email} <br/>
-    <strong>Mensaje:</strong>${formulario.mensaje}
-    ` 
+
+
+    html: `
+    ${formulario.mensaje}
+    `
 };
 
 transporter.sendMail(mailOptions, function(err, info){
-    NODE_TLS_REJECT_UNAUTHORIZED = 0
-    if(err)
+    process.env.NODE_TLS_REJECT_UNAUTHORIZED="0";
+    if(err){
         console.log(err)
-    else    
+        console.log("body",body);
+    console.log("message",message);
+    console.log ("formulario",formulario.mensaje);
+    } else    {
         console.log(info);
+        console.log("body",body);
+         console.log("message",message);
+    console.log ("formulario",formulario.mensaje);
+    }
 });
 }
 

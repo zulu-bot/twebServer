@@ -12,7 +12,7 @@ const rtsIndex = require('./routes/index.router');
 
 var app = express();
 
-NODE_TLS_REJECT_UNAUTHORIZED = 0
+process.env.NODE_TLS_REJECT_UNAUTHORIZED="0";
 
 //middleware
 app.use(bodyParser.json());
