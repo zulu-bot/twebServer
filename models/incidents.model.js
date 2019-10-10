@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+var customId = require("custom-id");
 
 var incidentsSchema = new mongoose.Schema({
     idIncidente:{
@@ -26,6 +27,12 @@ var incidentsSchema = new mongoose.Schema({
    estado: {
         type: String
    }
+});
+
+//eventos
+userSchema.pre( 'save', function(next) {
+    this.idIncidente = customId({});
+    next();
 });
 
 mongoose.model('Incidents', incidentsSchema);

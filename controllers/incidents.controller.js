@@ -30,4 +30,4 @@ module.exports.listincident = (req, res, next) => {
         //Si no hay errores, regresamos los registros
         res.send(doc);
     });
-    }
+}
