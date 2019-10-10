@@ -30,7 +30,7 @@ var incidentsSchema = new mongoose.Schema({
 });
 
 //eventos
-userSchema.pre( 'save', function(next) {
+incidentsSchema.pre( 'save', function(next) {
     this.idIncidente = customId({});
     next();
 });
