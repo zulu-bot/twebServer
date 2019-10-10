@@ -11,5 +11,6 @@ router.post('/authenticate', ctrlUSer.authenticate);
 router.get('/userProfile', jwtHelper.verifyJwtToken, ctrlUSer.userProfile);
 router.post('/registerincident',ctrlIncident.register);
 router.get('/listincident',ctrlIncident.listincident);
+router.put('/update', jwtHelper.verifyJwtToken, ctrlUSer.update);
 
 module.exports = router;
