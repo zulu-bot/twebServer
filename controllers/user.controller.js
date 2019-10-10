@@ -43,3 +43,13 @@ module.exports.userProfile = (req, res, next) => {
             }
         });
 }
+module.exports.update = (req, res, next) => {
+    User.findByIdAndUpdate({_id: req._id},{$set:req.body},
+        (err, user) => {
+            if (!user)
+                return res.status(404).json({ status: false , message: 'historial de usuario no encontrado.'});
+            else {
+                return res.status(200).json({status: true, message : "Actualizado con exito" });            
+            }
+        });
+}
